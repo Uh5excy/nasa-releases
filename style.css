@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #111827;
+}
+
+.releases,
+.more-releases {
+    max-width: 1260px;
+    padding: 45px 20px;
+    margin: 0 auto;
+}
+
+.more-releases {
+    padding-top: 10px;
+}
+
+.releases-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+    .releases-heading h1,
+    .releases-heading h2 {
+        margin: 0;
+    }
+
+    .releases-heading a {
+        color: #0b57d0;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .releases-heading a:hover {
+            text-decoration: underline;
+        }
+
+/* Основна асиметрична сітка: 4 колонки x 2 рядки */
+.release-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 185px);
+    gap: 15px;
+}
+
+/* Велика ліва картка: 2 колонки x 2 рядки */
+.release-card--lead {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Висока центральна картка: 1 колонка x 2 рядки */
+.release-card:nth-child(2) {
+    grid-row: span 2;
+}
+
+/* Картка з фото на весь блок та текстом поверх нього */
+.release-card {
+    position: relative;
+    overflow: hidden;
+    background: #1a2632;
+    color: #ffffff;
+    min-width: 0;
+}
+
+    .release-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.35s ease;
+    }
+
+    .release-card:hover img {
+        transform: scale(1.03);
+    }
+
+    /* Градієнтне затемнення поверх фото для читабельності білого тексту */
+    .release-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(transparent 25%, rgba(0, 0, 0, 0.88));
+        pointer-events: none;
+    }
+
+/* Текстовий блок поверх градієнта */
+.release-content {
+    position: absolute;
+    bottom: 18px;
+    left: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.release-type {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Варіант розміщення типу новини у верхній частині картки */
+.release-type--top {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.release-content h2,
+.release-content h3 {
+    font-size: 20px;
+    line-height: 1.15;
+    margin: 9px 0 0;
+}
+
+/* Виділення заголовка головної картки */
+.release-card--lead .release-content h2 {
+    font-size: 28px;
+    line-height: 1.15;
+}
+
+/* Окрема секція «Інші новини» */
+.more-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.release-card--compact {
+    height: 240px;
+}
+
+/* Адаптивність: <= 900px */
+@media (max-width: 900px) {
+    .release-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+    }
+
+    .release-card,
+    .release-card--lead,
+    .release-card:nth-child(2) {
+        grid-column: auto;
+        grid-row: auto;
+        height: 260px;
+    }
+
+        .release-card--lead .release-content h2 {
+            font-size: 22px;
+        }
+}
+
+/* Адаптивність: <= 600px та 390px */
+@media (max-width: 600px) {
+    .release-grid,
+    .more-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .release-card--compact {
+        height: 220px;
+    }
+
+    .releases-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .release-content h2,
+    .release-content h3,
+    .release-card--lead .release-content h2 {
+        font-size: 18px;
+    }
+}

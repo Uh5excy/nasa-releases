@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Releases — навчальний макет</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section class="releases" aria-labelledby="releases-title">
+            <div class="releases-heading">
+                <h1 id="releases-title">News Releases</h1>
+                <a href="https://www.nasa.gov/news/" target="_blank" rel="noopener noreferrer">Усі новини</a>
+            </div>
+
+            <div class="release-grid">
+                <!-- Велика ліва картка (2 колонки x 2 рядки) -->
+                <article class="release-card release-card--lead">
+                    <img src="images/release1.jpg" alt="Вид Землі з орбіти під час космічної місії">
+                    <div class="release-content">
+                        <span class="release-type">BLOG • 2 ХВ ЧИТАННЯ</span>
+                        <h2>Підготовка екіпажу до нової орбітальної місії</h2>
+                    </div>
+                </article>
+
+                <!-- Висока центральна картка (1 колонка x 2 рядки) -->
+                <article class="release-card">
+                    <img src="images/release2.jpg" alt="Космічний апарат у глибокому космосі">
+                    <div class="release-content">
+                        <span class="release-type">NEWS RELEASE • 3 ХВ ЧИТАННЯ</span>
+                        <h2>Запуск автоматичної станції для дослідження далеких об'єктів</h2>
+                    </div>
+                </article>
+
+                <!-- Мала картка праворуч угорі -->
+                <article class="release-card">
+                    <img src="images/release3.jpg" alt="Інженери тестують обладнання в лабораторії">
+                    <div class="release-content">
+                        <span class="release-type">NEWS RELEASE • 4 ХВ ЧИТАННЯ</span>
+                        <h2>Нові випробування систем життєзабезпечення</h2>
+                    </div>
+                </article>
+
+                <!-- Мала картка праворуч унизу -->
+                <article class="release-card">
+                    <img src="images/release4.jpg" alt="Супутниковий знімок поверхні планети">
+                    <div class="release-content">
+                        <span class="release-type">BLOG • 3 ХВ ЧИТАННЯ</span>
+                        <h2>Аналіз супутникових даних та кліматичних змін</h2>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Окрема секція «Інші новини» -->
+        <section class="more-releases" aria-labelledby="more-releases-title">
+            <div class="releases-heading">
+                <h2 id="more-releases-title">Інші новини</h2>
+            </div>
+
+            <div class="more-grid">
+                <article class="release-card release-card--compact">
+                    <img src="images/release5.jpg" alt="Ракета-носій на стартовому майданчику">
+                    <div class="release-content">
+                        <span class="release-type">NEWS RELEASE • 5 ХВ ЧИТАННЯ</span>
+                        <h3>Підготовка стартового комплексу до наступного пуску</h3>
+                    </div>
+                </article>
+
+                <article class="release-card release-card--compact">
+                    <img src="images/release6.jpg" alt="Астрономічна обсерваторія під зоряним небом">
+                    <div class="release-content">
+                        <span class="release-type">BLOG • 2 ХВ ЧИТАННЯ</span>
+                        <h3>Спостереження за метеорним потоком з наземних обсерваторій</h3>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
